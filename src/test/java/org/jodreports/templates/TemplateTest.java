@@ -30,9 +30,13 @@ import nu.xom.Nodes;
 import nu.xom.Text;
 import freemarker.template.Configuration;
 import freemarker.template.TemplateException;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
+import org.junit.Test;
 
 public class TemplateTest extends AbstractTemplateTest {
 
+	@Test
     public void testZipped() throws IOException, DocumentTemplateException {
         File templateFile = getTestFile("hello-template.odt");
         Map model = new HashMap();
@@ -41,6 +45,7 @@ public class TemplateTest extends AbstractTemplateTest {
         assertEquals("output content", "Hello Mirko!", actual);
     }
 
+	@Test
     public void testUnzipped() throws IOException, DocumentTemplateException {
         File templateDir = getTestFile("hello-template");
         Map model = new HashMap();
@@ -49,6 +54,7 @@ public class TemplateTest extends AbstractTemplateTest {
         assertEquals("output content", "Hello Mirko!", actual);
     }
 
+	@Test
     public void testXmlSpecialChars() throws IOException, DocumentTemplateException {
         File templateFile = getTestFile("hello-template.odt");
         Map model = new HashMap();
@@ -63,6 +69,7 @@ public class TemplateTest extends AbstractTemplateTest {
      * @throws IOException
      * @throws TemplateException
      */
+	@Test
     public void testStylesDotXml() throws IOException, DocumentTemplateException {
         File templateFile = getTestFile("header-template.odt");
         Map model = new HashMap();
@@ -73,6 +80,7 @@ public class TemplateTest extends AbstractTemplateTest {
         } catch (DocumentTemplateException expected) { }
     }
 
+	@Test
     public void testUtf8() throws Exception {
         File templateFile = getTestFile("hebrew-template.odt");
         Map model = new HashMap();
@@ -81,6 +89,7 @@ public class TemplateTest extends AbstractTemplateTest {
         assertEquals("output content", "A Hebrew Template\n\nטקסט עברי: שלום", actual);        
     }
 
+	@Test
     public void testCustomFreemarkerConfiguration() throws Exception {
     	File templateFile = getTestFile("number-template.odt");
     	DocumentTemplateFactory documentTemplateFactory = new DocumentTemplateFactory();
@@ -97,6 +106,7 @@ public class TemplateTest extends AbstractTemplateTest {
         assertEquals("output content", "Number: 1,000.00", content);   
     }
 
+	@Test
     public void testLineBreaks() throws Exception {
         File templateFile = getTestFile("multiline-template.odt");
         Map model = new HashMap();
@@ -110,6 +120,7 @@ public class TemplateTest extends AbstractTemplateTest {
         assertEquals("output content", expected, content);        
     }
 
+	@Test
     public void testCustomContentWrapper() throws Exception {
         File templateFile = getTestFile("multiline-template.odt");
         Map model = new HashMap();
@@ -140,6 +151,7 @@ public class TemplateTest extends AbstractTemplateTest {
      * 
      * @throws Exception
      */
+	@Test
 	public void testCustomXmlEntryFilter() throws Exception {
 		File templateFile = getTestFile("hello-template.odt");
 		DocumentTemplateFactory documentTemplateFactory = new DocumentTemplateFactory();

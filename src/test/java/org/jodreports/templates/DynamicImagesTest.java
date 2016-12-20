@@ -13,9 +13,12 @@ import org.jodreports.templates.image.ClasspathImageSource;
 import org.jodreports.templates.image.FileImageSource;
 import org.jodreports.templates.image.ImageSource;
 import org.jodreports.templates.image.RenderedImageSource;
+import static org.junit.Assert.assertEquals;
+import org.junit.Test;
 
 public class DynamicImagesTest extends AbstractTemplateTest {
 
+	@Test
 	public void testOrderForm() throws Exception {
 		File templateFile = getTestFile("order-with-images-template.odt");
 		
@@ -70,6 +73,7 @@ public class DynamicImagesTest extends AbstractTemplateTest {
 		assertEquals("incorrect output", expected, content);		
 	}
 
+	@Test
 	public void testNewScriptOrderForm() throws Exception {
 		File templateFile = getTestFile("order-with-images-template-2.odt");
 		
@@ -124,6 +128,7 @@ public class DynamicImagesTest extends AbstractTemplateTest {
 		assertEquals("incorrect output", expected, content);		
 	}
 	
+	@Test
 	public void testImageSourceWithFileName() throws Exception {
 		File templateFile = getTestFile("order-with-images-template.odt");
 		
@@ -176,6 +181,7 @@ public class DynamicImagesTest extends AbstractTemplateTest {
 		assertEquals("incorrect output", expected, content);		
 	}
 
+	@Test
 	public void testOrderFormWithImageResize() throws Exception {
 		File templateFile = getTestFile("order-with-images-resize-template.odt");
 		
@@ -230,6 +236,7 @@ public class DynamicImagesTest extends AbstractTemplateTest {
 		assertEquals("incorrect output", expected, content);		
 	}
 	
+	@Test
 	public void testImageResize() throws Exception {
 		File templateFile = getTestFile("images-resize-template.odt");
         Map model = new HashMap();
@@ -263,6 +270,7 @@ public class DynamicImagesTest extends AbstractTemplateTest {
         assertEquals("output content", expected, actual);
 	}
 
+	@Test
 	public void testImageResizeInLocaleWithCommaAsDecimalSeparator()
 			throws Exception {
 		Locale locale = Locale.getDefault();

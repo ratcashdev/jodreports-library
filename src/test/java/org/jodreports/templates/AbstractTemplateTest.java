@@ -6,15 +6,17 @@ import java.io.IOException;
 import java.util.Locale;
 import java.util.Map;
 
-import junit.framework.TestCase;
+import static org.junit.Assert.assertTrue;
+import org.junit.Before;
 
 import org.xml.sax.SAXException;
 
-public abstract class AbstractTemplateTest extends TestCase {
+public abstract class AbstractTemplateTest {
 
 	private DocumentTemplateFactory documentTemplateFactory;
 
-	protected void setUp() throws Exception {
+	@Before
+	public void setUp() throws Exception {
 		documentTemplateFactory = new DocumentTemplateFactory();
 		documentTemplateFactory.getFreemarkerConfiguration().setLocale(Locale.US);
 	}

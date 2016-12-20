@@ -19,6 +19,8 @@ import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import static org.junit.Assert.assertEquals;
+import org.junit.Test;
 
 /**
  * test input field tags <tt>&lt;text:text-input text-description="JOOScript"&gt;...&lt;/text:text-input&gt;</tt>
@@ -28,6 +30,7 @@ public class TextInputTagTest extends AbstractTemplateTest {
 	/**
 	 * input field with content <tt>$name</tt>
 	 */
+	@Test
     public void testVariable() throws IOException, DocumentTemplateException {
         File templateFile = getTestFile("textinput-variable-template.odt");
         Map model = new HashMap();
@@ -39,6 +42,7 @@ public class TextInputTagTest extends AbstractTemplateTest {
 	/**
 	 * input field with content <tt>[#assign title='Mr.']</tt>
 	 */
+	@Test
     public void testDirective() throws IOException, DocumentTemplateException {
         File templateFile = getTestFile("textinput-directive-template.odt");
         Map model = new HashMap();
@@ -51,6 +55,7 @@ public class TextInputTagTest extends AbstractTemplateTest {
 	 * input fields for directive in one line<p> 
 	 * <tt>[#if showname=='Yes']...[/#if]</tt>
 	 */
+	@Test
     public void testDirectivesInOneLine() throws IOException, DocumentTemplateException {
         File templateFile = getTestFile("textinput-directives-oneline-template.odt");
         Map model = new HashMap();
@@ -68,6 +73,7 @@ public class TextInputTagTest extends AbstractTemplateTest {
 	 * ...<br>
 	 * <tt>[/#if]</tt><br>
 	 */
+	@Test
     public void testDirectivesInSplitLine() throws IOException, DocumentTemplateException {
         File templateFile = getTestFile("textinput-directives-splitline-template.odt");
         Map model = new HashMap();
@@ -81,6 +87,7 @@ public class TextInputTagTest extends AbstractTemplateTest {
 	 * input field for directive contains "&amp;"<p> 
 	 * <tt>[#if (cond1=='pass' && cond2=='pass')]</tt>
 	 */
+	@Test
     public void testDirectiveWithSpecialChars() throws IOException, DocumentTemplateException {
         File templateFile = getTestFile("textinput-directives-special-chars-template.odt");
         Map model = new HashMap();
@@ -98,6 +105,7 @@ public class TextInputTagTest extends AbstractTemplateTest {
 	 * ...<br>
 	 * <tt>[/#switch]</tt><br>
 	 */
+	@Test
     public void testDirectivesSwitch() throws IOException, DocumentTemplateException {
         File templateFile = getTestFile("textinput-directives-switch-template.odt");
         Map model = new HashMap();

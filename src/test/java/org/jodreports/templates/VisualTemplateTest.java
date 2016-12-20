@@ -21,6 +21,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import static org.junit.Assert.assertEquals;
+import org.junit.Test;
 
 public class VisualTemplateTest extends AbstractTemplateTest {
 
@@ -29,6 +31,7 @@ public class VisualTemplateTest extends AbstractTemplateTest {
 	 * <tt>[description:field1,content:field one] [description:field2,content:field two]</tt>
 	 * @deprecated use {@link TextInputTagTest#testVariable()}
 	 */
+	@Test
 	public void testVisualFields() throws IOException, DocumentTemplateException {
         File templateFile = getTestFile("visual-fields-template.odt");
         Map model = new HashMap();
@@ -44,6 +47,7 @@ public class VisualTemplateTest extends AbstractTemplateTest {
 	/**
 	 * template contains <tt>[#setting number_format="00.00"]</tt>
 	 */
+	@Test
     public void testScriptWithSetting() throws IOException, DocumentTemplateException {
         File templateFile = getTestFile("visual-script-setting-template.odt");
         Map model = new HashMap();
@@ -55,6 +59,7 @@ public class VisualTemplateTest extends AbstractTemplateTest {
 	/**
 	 * template contains <tt>[#setting number_format="00.00"]</tt> in new JOOScript style
 	 */
+	@Test
     public void testNewScriptWithSetting() throws IOException, DocumentTemplateException {
         File templateFile = getTestFile("visual-script-setting-template-2.odt");
         Map model = new HashMap();
@@ -66,6 +71,7 @@ public class VisualTemplateTest extends AbstractTemplateTest {
 	/**
 	 * template contains <tt>[#list items as item]</tt>
 	 */
+	@Test
     public void testScriptForRepeatingTableRow() throws IOException, DocumentTemplateException {
         File templateFile = getTestFile("visual-repeat-table-row-template.odt");
         Map model = new HashMap();
@@ -95,6 +101,7 @@ public class VisualTemplateTest extends AbstractTemplateTest {
 	/**
 	 * template contains <tt>[#list items as item]</tt> in new JOOScript style
 	 */
+	@Test
     public void testNewScriptForRepeatingTableRow() throws IOException, DocumentTemplateException {
         File templateFile = getTestFile("visual-repeat-table-row-template-2.odt");
         Map model = new HashMap();
@@ -124,6 +131,7 @@ public class VisualTemplateTest extends AbstractTemplateTest {
 	/**
 	 * template contains <tt>[#if (item.cond1=='yes' && item.cond2=='--')]</tt> in JooScript for directive condition
 	 */
+	@Test
     public void testScriptWithSpecialCharsInDirective() throws IOException, DocumentTemplateException {
         File templateFile = getTestFile("visual-script-special-chars-template.odt");
         Map model = new HashMap();
@@ -159,6 +167,7 @@ public class VisualTemplateTest extends AbstractTemplateTest {
     /**
 	 * template contains special characters in JooScript for output
 	 */
+	@Test
     public void testScriptWithSpecialCharsForOutput() throws IOException, DocumentTemplateException {
         File templateFile = getTestFile("visual-script-special-chars-output-template.odt");
         Map model = new HashMap();
@@ -171,6 +180,7 @@ public class VisualTemplateTest extends AbstractTemplateTest {
 	/**
 	 * template contains jooscript for changing tag attribute <tt>syntax: @#location \n attributeName=value</tt>
 	 */
+	@Test
     public void testScriptForTableSpanRow() throws IOException, DocumentTemplateException {
         File templateFile = getTestFile("visual-table-span-row-template.odt");
         Map model = new HashMap();
@@ -204,6 +214,7 @@ public class VisualTemplateTest extends AbstractTemplateTest {
 	/**
 	 * template contains jooscript for inserting script in preceding element </tt>
 	 */
+	@Test
     public void testScriptForTableDynamicColumn() throws IOException, DocumentTemplateException {
         File templateFile = getTestFile("visual-table-dynamic-column-template.odt");
         Map model = new HashMap();

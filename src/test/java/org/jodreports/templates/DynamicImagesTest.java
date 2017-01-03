@@ -254,19 +254,19 @@ public class DynamicImagesTest extends AbstractTemplateTest {
 			"MaxWidth\n" +
 			"[frame:2.54cm,1.57cm][img:Pictures/dynamic-image-1.png]\n" +
 			"[frame:2.54cm,4.12cm][img:Pictures/dynamic-image-2.png]\n" +
-			"[frame:2.54cm,1.9cm][img:Pictures/dynamic-image-3.png]\n" +
+			"[frame:2.54cm,1.91cm][img:Pictures/dynamic-image-3.png]\n" +
 			"[frame:2.54cm,3.39cm][img:Pictures/dynamic-image-4.png]\n" +
 			"MaxHeight\n" +
 			"[frame:4.12cm,2.54cm][img:Pictures/dynamic-image-1.png]\n" +
 			"[frame:1.57cm,2.54cm][img:Pictures/dynamic-image-2.png]\n" +
 			"[frame:3.39cm,2.54cm][img:Pictures/dynamic-image-3.png]\n" +
-			"[frame:1.9cm,2.54cm][img:Pictures/dynamic-image-4.png]\n" +
+			"[frame:1.91cm,2.54cm][img:Pictures/dynamic-image-4.png]\n" +
 			"Fit\n" +
 			"[frame:2.54cm,1.57cm][img:Pictures/dynamic-image-1.png]\n" +
 			"[frame:1.57cm,2.54cm][img:Pictures/dynamic-image-2.png]\n" +
-			"[frame:2.54cm,1.9cm][img:Pictures/dynamic-image-3.png]\n" +
-			"[frame:1.9cm,2.54cm][img:Pictures/dynamic-image-4.png]";			
-        
+			"[frame:2.54cm,1.91cm][img:Pictures/dynamic-image-3.png]\n" +
+			"[frame:1.91cm,2.54cm][img:Pictures/dynamic-image-4.png]";			
+
         assertEquals("output content", expected, actual);
 	}
 

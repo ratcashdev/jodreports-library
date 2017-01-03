@@ -16,6 +16,7 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	<jacoco.version>0.7.8</jacoco.version>
   </properties>
   <url>http://jodreports.org/</url>
 
@@ -160,10 +161,58 @@
             <target>1.8</target>
           </configuration>
         </plugin>
-
+		
+		<plugin>
+			<groupId>org.jacoco</groupId>
+			<artifactId>jacoco-maven-plugin</artifactId>
+			<version>${jacoco.version}</version>
+			<configuration>
+				<skip>${maven.test.skip}</skip>
+				<!--<propertyName>argLine</propertyName>-->
+				<destFile>${project.build.directory}/jacoco.exec</destFile>
+				<append>true</append>
+				<excludes>
+				</excludes>
+			</configuration>
+                    
+			<executions>
+				<execution>
+					<id>default-prepare-agent</id>
+					<phase>initialize</phase>
+					<goals>
+						<goal>prepare-agent</goal>
+					</goals>
+				</execution>
+				<execution>
+					<id>default-prepare-agent-integration</id>
+					<goals>
+						<goal>prepare-agent-integration</goal>
+					</goals>
+				</execution>
+				<execution>
+					<id>default-report</id>
+					<phase>prepare-package</phase>
+					<goals>
+						<goal>report</goal>
+					</goals>
+				</execution>
+				<execution>
+					<id>default-report-integration</id>
+					<goals>
+						<goal>report-integration</goal>
+					</goals>
+				</execution>
+			</executions>
+		</plugin>
       </plugins>
     </pluginManagement>
 
+	<plugins>
+		<plugin>
+			<groupId>org.jacoco</groupId>
+			<artifactId>jacoco-maven-plugin</artifactId>
+		</plugin>
+	</plugins>
   </build>
 
 

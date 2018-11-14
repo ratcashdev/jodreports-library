@@ -1,4 +1,4 @@
-This is JODReports version 3.0.1, released on 2011-01-28
+This is JODReports version 3.0.1, released on 2018-11-14
 
 Please see
 
